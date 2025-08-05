@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+input[type='button']{
+     font-size: 20pt;
+     padding: 13px;
+     background-color: hsla(160, 100%, 75%, 0.281);
+     cursor: pointer;
+}
+body{
+    background-color: rgba(73, 73, 145, 0.212);
+    font: normal 20pt italic;
+}
+a{
+    background-color: yellowgreen;
+}
+
+h1{
+    font-family: 'Pacifico', cursive;
+}

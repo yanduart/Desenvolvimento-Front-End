@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Programa</title>
+    <style>
+        a {
+            font-style: oblique;
+            font-weight: bold;
+        }
+        body{
+            background-color: aqua;
+            font: normal 20pt arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Operadores Relacionais!!
+      var n1 = Number(window.prompt('informe um número'))
+     var n2 = Number(window.prompt('informe um outro número'))
+      var r1 = n1 > n2
+      var r2 = n1 < n2
+      var r3 = n1 >= n2
+      var r4 = n1 <= n2
+      var r5 = n1 == n2                               // OBS: tem o operador === que significa idêntico ou seja, do mesmo tipo
+      var r6 = n1 != n2
+     
+      document.write(`${n1} > ${n2} = <a>${r1}</a> <br/>`)
+      document.write(`${n1} < ${n2} = <a>${r2}</a> <br/>`)
+      document.write(`${n1} >= ${n2} = <a>${r3}</a> <br/>`)                         //Ctrl-alt-h - para output vs
+      document.write(`${n1} <= ${n2} = <a>${r4}</a> <br/>`)
+      document.write(`${n1} == ${n2} = <a>${r5}</a> <br/>`)
+      document.write(`${n1} != ${n2} = <a>${r6}</a> <br/><br/>`)
+
+     
+          //Também tem operadores lógicos, EX: &&,!,||...  
+      var salario = Number(window.prompt('infome o seu salário'))
+      if(salario >= 400.4 && salario <= 500.6){
+        document.write('O salário está dentro da média!! <br/><br/>')
+      } else  {
+        document.write('O salário está fora da média!! <br/><br/>')
+      }
+
+
+       // Operador Ternário
+      var nota = Number(window.prompt('infome sua nota'))
+      var r7 = nota > 10?'APROVADO':'REPROVADO'              //Ternário ... ?true :false
+           document.write(`${nota} > 10 = ${r7} <br/>`)
+      
+    </script>
+</body>
+</html>

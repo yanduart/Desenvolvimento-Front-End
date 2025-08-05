@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Dados v2.0</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        input{
+            font-size: 12pt; padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Dados v2.0</h1>
+    <input type="button" value="Clique aqui para Começar" onclick="verificar()">
+    <div id="ress">
+      <br> aqui vai aparecer o resultado...
+    </div>
+    <script>
+        
+         function verificar(){
+            let ress = window.document.getElementById('ress')
+            let nome = window.prompt('Informe seu nome!')
+            if(nome == null || nome == ''){
+                window.alert('[ERROR!] informe os dados novamente!')
+            } else {
+                ress.innerHTML = `<br>Olá <strong>${nome}</strong> prazer em te conhecer! &#x1F596`
+            }
+         }
+    </script>
+</body>
+</html>

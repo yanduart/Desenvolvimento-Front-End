@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média do aluno</title>
+    <style>
+        body{
+            font: normal 15pt italic;
+        }
+        input{
+            padding: 16px;
+            font-size: 15pt;
+        }
+        a{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média do aluno v1.0</h1>
+    <input type="button" value="Calcular média" onclick="verificar()">
+    <div id="ress">
+     <br> Resultado...
+    </div>
+    <script>
+       function verificar(){
+        let ress = window.document.getElementById('ress')
+
+        let nome = window.prompt('Informe seu nome!')
+        if(/^[A-Za-z\s!+-]+$/.test(nome) && nome != null){
+        let not1 = window.prompt('Informe a primeira nota!')
+        if(/^[0-9]+$/.test(not1)){
+        let not2 = window.prompt(`Além de ${not1}, informe a segunda nota!`)
+        if(/^[0-9]+$/.test(not2)){
+        let soma = Number(not1) + Number(not2)
+        let media = soma / 2
+        ress.innerHTML = ''
+        ress.innerHTML = `<p>Calculando a média final de <strong><a>${nome}</a></strong>.</p>`
+        ress.innerHTML += `<p>As notas obtidas foram <strong><a>${not1}</a></strong> e <strong><a>${not2}</a></strong>.</p>`
+        ress.innerHTML += `<p>A média das notas foram <strong><a>${media}</a></strong>.</p>`
+         
+        } else {
+            window.alert('[ERROR!] "Nota 2 Incorreto" Insira os Dados Corretamente!')
+        }
+        } else {
+            window.alert('[ERROR!] "Nota 1 Incorreto" Insira os Dados Corretamente!')
+        } 
+         } else {
+            window.alert('[ERROR!] "Nome Incorreto!" Insira os Dados Corretamente!')
+        }
+       }
+    </script>
+</body>
+</html>

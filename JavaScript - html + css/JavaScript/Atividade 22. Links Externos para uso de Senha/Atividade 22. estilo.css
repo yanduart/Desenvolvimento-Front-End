@@ -1,0 +1,37 @@
+body{
+       
+       font: normal 15pt arial;
+       transition: background-color 0.5s ease; /* Adiciona uma transição suave para a mudança de cor */
+       background-color: aquamarine;
+}
+
+header{
+     color:rgba(153, 47, 47, 0.925);
+     text-align: center; /* centraliza o text */
+}
+
+section{
+       background: white;
+       border-radius: 10px; /* Muda a borda */
+       padding: 15px; /* Centraliza o text dentro e aumenta a altura */
+       width: 500px; /* Largura */
+       margin: auto; /* Centralizar */
+       box-shadow: 5px 5px 10px black; /* Sombra */
+}
+
+footer{
+    color:rgb(197, 49, 49);
+    text-align: center; /* centraliza o text */
+    font-style: italic;
+    
+}
+
+ div{
+       padding: 8px;
+} 
+a {
+       color: black;
+}
+p {
+       color: rgb(0, 0, 0);
+}

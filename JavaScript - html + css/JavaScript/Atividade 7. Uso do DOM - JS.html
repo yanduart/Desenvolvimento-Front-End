@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                     <!-- Ctrl-alt-h - para output vs -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>                      <!-- DOM significa Document Object Model-->   
+    <style>                                                                                      
+        body{ 
+            background-color: aqua;
+            color: black;
+            font: normal 16pt arial;
+        }
+        p{
+             font: normal 14pt arial;
+             color: black;
+        }
+        div{
+            font: normal 14pt arial;
+            color: black;
+        }
+        h1{
+            font: normal 18pt arial;
+            color: rgb(252, 4, 4);
+        }
+    </style>              
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+        <p class="msg">Aqui vai o resultado</p>
+        <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+            <div id="msg">Clique em mim</div><br>
+            <div name="msg">clique em nós</div><br>
+        <script>
+            window.document.write('Olá mundo! <br>')
+            window.document.write('O conjunto de caracteres é o: ')
+            window.document.write(window.document.charset)
+            window.document.write('<br>Navegador atual: ')
+            window.document.write(window.navigator.appName)
+            window.document.write('<br> URL de acesso: ')
+            window.document.write(window.document.URL)
+
+            
+            var corpo = window.document.body
+            var p1 = window.document.getElementsByTagName('p')[1]    // [] indica a posição do marcador, no caso o p de parágrafo, e getElementsByTagName armazena na variável todo o conteúdo do marcador.
+            window.document.write('<br><br>Esta escrito assim: ' + p1.innerText) // innerText mostra o conteúdo da variável p1.
+            window.document.write('<br>Está escrito assim: ' + p1.innerHTML) // innerHTML mostra o conteúdo completo!!
+            p1.style.color = 'blue'  // maneira facil de mudar sem usar html.
+            p1.style.font = 'normal 20pt arial' // maneira facil de mudar sem usar html.
+            corpo.style.background = 'yellow' // maneira facil de mudar sem usar html.
+            //window.alert(p1.innerText)
+
+             
+             var d = window.document.getElementById('msg') // por id.
+             d.style.background = 'green'
+             d.innerHTML = 'salve!' //innerText
+             
+
+             var n = window.document.getElementsByName('msg')[0] // por nome plural!!
+             n.style.background = 'cyan'
+
+             var c = window.document.getElementsByClassName('msg')[0] // por classe plural!!
+             c.style.background = 'pink'
+             c.innerText = 'Aqui vai o resultado: Curso em Vídeo'
+
+
+
+             var s = window.document.querySelector('p.msg') // por seleção / Ex: 'p.msg e div#msg' 
+             s.style.color = 'yellow'
+           
+         </script>
+</body>
+</html>

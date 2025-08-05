@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt arial;   /* A ordem importa!! */
+            background: green;
+            color: rgb(160, 153, 153);
+            width: 200px; /* largura */
+            height: 200px; /* Altura */
+            line-height: 200px; /* Mesma altura */
+            text-align: center; /* Centro */
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="area">  <!-- onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"--> <!--conecta na função-->
+        Interaja...
+    </div>                 <!--função e evento no html e JS-->
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)             //função e eventos dentro do JS!!
+        a.addEventListener('mouseout', sair)
+        function clicar(){
+         // faz a ligação na div
+         a.innerText = 'clicou!'
+         a.style.background = 'red'
+        }
+        function entrar(){
+         a.innerText = 'Entrou!'
+        }
+        function sair(){
+        a.innerText = 'Saiu!'
+        a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

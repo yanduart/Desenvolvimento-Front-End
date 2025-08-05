@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #Resultado {
+            font-size: 2em;
+            margin-top: 20px;
+            text-align: center;
+            width: 330px;
+        } 
+        div#dia{
+            margin-top: 20px;
+            font: normal 20pt italic;
+            /* margin-left: direita
+               margin-right: esquerda */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hora Atual</h1>
+    <div>
+        <input type="text" id="Resultado" readonly > <!--readonly serva para que a pessoa não mexa na caixa de texto-->
+    </div>
+    <div id="dia">
+
+        </div>
+
+    <script>
+        function atualizar() {
+            var agora = new Date();
+            var horas = agora.getHours();
+            var minutos = agora.getMinutes();
+            var segundos = agora.getSeconds();
+
+            // Adiciona zero à esquerda se necessário
+            horas = horas < 10 ? '0' + horas : horas;
+            minutos = minutos < 10 ? '0' + minutos : minutos;
+            segundos = segundos < 10 ? '0' + segundos : segundos;
+
+            var saudacao = '';
+            if (horas < 12) {
+                saudacao = 'Bom dia!';
+            } else if (horas <= 18) {
+                saudacao = 'Boa tarde!';
+            } else {
+                saudacao = 'Boa noite!';
+            }
+
+            var resultado = horas + ':' + minutos + ':' + segundos + ' - ' + saudacao;
+            document.getElementById('Resultado')
+            Resultado.value = resultado
+
+            
+            var DiaSem = agora.getDay();
+
+           var DiaSemanda = ''
+          switch (DiaSem){
+            case 0: 
+             DiaSemana = 'Hoje é Domingo'
+            break;
+            case 1: 
+             DiaSemana = 'Hoje é Segunda'
+            break;
+            case 2: 
+             DiaSemana = 'Hoje é Terça'
+            break;
+            case 3: 
+            DiaSemana = 'Hoje é Quarta'
+            break;
+            case 4: 
+            DiaSemana = 'Hoje é Quinta'
+            break;
+            case 5:
+            DiaSemana = 'Hoje é Sexta'
+            break;
+            case 6:
+            DiaSemana = 'Hoje é Sábado'
+            break;
+        }
+              window.document.getElementById('dia')
+              dia.innerHTML = DiaSemana
+        }
+
+        // Atualiza a hora a cada segundo
+        setInterval(atualizar, 1000); 
+
+        // Chama a função uma vez para evitar atraso de 1 segundo
+        atualizar();
+    </script>
+</body>
+</html>

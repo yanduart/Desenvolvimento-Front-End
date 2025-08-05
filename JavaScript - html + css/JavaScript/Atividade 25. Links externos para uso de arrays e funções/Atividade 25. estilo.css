@@ -1,0 +1,56 @@
+body{
+       
+       font: normal 15pt arial;
+       transition: background-color 0.5s ease; /* Adiciona uma transição suave para a mudança de cor */
+       background-color: rgb(149, 88, 230);
+}
+
+header{
+     color:rgba(153, 47, 47, 0.925);
+     text-align: center; /* centraliza o text */
+}
+
+section{
+       background: white;
+       border-radius: 10px; /* Muda a borda */
+       padding: 15px; /* Centraliza o text dentro e aumenta a altura */
+       width: 500px; /* Largura */
+       margin: auto; /* Centralizar */
+       box-shadow: 5px 5px 10px black; /* Sombra */
+}
+
+footer{
+    color:rgb(197, 49, 49);
+    text-align: center; /* centraliza o text */
+    font-style: italic;
+    
+}
+
+ div{
+       padding: 8px;
+} 
+a {
+       color: black;
+}
+p {
+       color: rgb(0, 0, 0);
+       
+}
+input{
+        height: 20px;
+}
+
+button#add {
+       cursor: pointer;
+   }
+
+   .botao-clicavel {
+       cursor: pointer;
+       height: 25px;
+       background-color: hsla(281, 51%, 73%, 0.384);
+   }
+
+select#sel{
+       width: 170px;
+       margin-bottom: 8px;        /* move internamente!!*/
+}

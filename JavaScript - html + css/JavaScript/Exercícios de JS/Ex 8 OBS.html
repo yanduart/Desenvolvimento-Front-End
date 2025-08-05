@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: normal 14pt italic;
+            background-color: #7a3db377;
+        }
+        input{
+            font-size: 13pt;
+            padding: 15px;  
+            background-color: #deb8875b; 
+        }
+        .list{
+             opacity: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vários Cálculos em JS</h1>
+    <input type="button" value="Clique para calcular" onclick="chek()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="ress">
+       <br> Resultado...
+    </div>
+    <hr>
+    <div id="res">
+         
+    </div>
+    <script>
+
+        function entrar(){
+            var botao = window.document.querySelector('input[type="button"]');
+            botao.style.backgroundColor = '#7a3db3' ; // Cor de destaque
+            botao.style.color = 'white'; // Cor do texto
+            botao.classList.add('list')
+
+        }
+
+        function sair(){
+            var botao = window.document.querySelector('input[type="button"]');
+            botao.style.backgroundColor = ''
+            botao.style.color = ''
+            
+        }
+
+        function chek(){
+         var ress = window.document.getElementById('ress')
+         var res = window.document.getElementById('res')
+         var n1 = window.prompt('Informe um valor!')
+         if(/^[0-9]+$/.test(n1)){
+            if (n1 == 0){
+            window.alert('[ERROR!] Valor com 0 Inválido!!')
+            return 0
+           }
+            ress.innerHTML = `<br>O número a ser analisado aqui será o <strong>${n1}</strong>`
+            res.innerHTML = `O seu valor absoluto é: <strong>${n1}</strong>`
+            res.innerHTML += `<p>Sua parte interia é: <strong>${n1}</strong></p>`
+            let v1 = Number(n1) - 1
+            let v2 = Number(n1) + 1
+            res.innerHTML += `<p>O valor inteiro mais próximo é: <strong>${v1}</strong> e <strong>${v2}</strong></p>`
+            res.innerHTML += `<p>A sua raiz é: <strong>${Math.sqrt(n1)}</strong> </p>`
+            res.innerHTML += `<p>A sua raiz cúbica é: <strong>${Math.cbrt(n1)}</strong></p>`
+            res.innerHTML += `<p>O valor de de <strong>${n1}</strong><strong><sup>2</sup></strong> é: <strong>${Math.pow(n1, 2)}</strong></p>`
+            res.innerHTML += `<p>O valor de de <strong>${n1}</strong><strong><sup>3</sup></strong> é: <strong>${Math.pow(n1, 3)}</strong></p>`
+         } else {
+            window.alert('[ERROR!] Informe um valor válido!')
+         }
+         
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Números!</title>
+    <style>
+       input{
+        font-size: 19pt;
+        padding: 30px;
+       }
+    </style>
+</head>
+<body>
+    <h1>Manipulando Números!</h1>
+    <input type="button" value="Clique para começar" onclick="verificar()"> 
+    <div id="ress">
+      <br> O resultado vem aqui...
+    </div>
+    <script>
+        window.alert('Seja bem vindo ao meu site!!')
+     function verificar(){
+        let ress = window.document.getElementById('ress')
+        let input = window.prompt('Informe um número!!')
+        let n = Number(input)
+        if(input == null || input == ''|| isNaN(input)){   // isNaN: para ferificar se e número ou string
+            window.alert('[ERROR!] informe um valor válido!!')
+        }
+            else if (n == 0){
+                window.alert('[ERROR!] com 0 não e possível calcular!!')
+                
+            } else {    
+              let dobro = n * 2
+              let metade = n / 2
+              ress.innerHTML = `<br>O dobro de <strong>${n}</strong> é <strong>${dobro}</strong> e a metade é <strong>${metade}</strong>!`
+        }
+     }
+    </script>
+</body>
+</html>

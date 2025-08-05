@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Programa</title>
+    <style>
+        b{
+            font-weight: bold;  /*bold = Negrito*/
+        }
+        body{
+            background-color: rgba(99, 100, 55, 0.76);
+            font: normal 20pt arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // contas Aritiméticas-atribuição matemática!!! OBS: tem ordem de precedência ao juntar elas!!
+         var n1 = Number(window.prompt('informe um número!'))
+         var n2 = Number(window.prompt('informe um outro número!'))
+         var r1 = n1 + n2
+         var r2 = n1 - n2
+         var r3 = n1 * n2
+         var r4 = n1 % n2
+         var r5 = n1 ** n2
+         var r7 = r6 = n1 / n2 
+         var r7 = r7 += n1  // valor por atribuição!! EX: =, +=, -=, *=...
+         document.write(`A soma dos números é: <b>${r1}</b> <br/>`)
+         document.write(`A subtração é: <b>${r2}</b> <br/>`)
+         document.write(`A multiplicação é: <b>${r3}</b> <br/>`)
+         document.write(`O resto da divisão é: <b>${r4}</b> <br/>`)
+         document.write(`O número elevado é: <b>${r5}</b> <br/>`)
+         document.write(`A divisão é: <b>${r6}</b> <br/>`)
+         document.write(`A soma de ${r6} + ${n1} é: <b>${r7}</b>`)
+        
+    </script>
+</body>
+</html>

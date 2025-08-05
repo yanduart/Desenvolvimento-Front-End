@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        input[type='button']:hover{
+            cursor: pointer; /* Muda o cursor para mão */
+            transition: background-color 0.7s, transform 0.3s; /* Transição suave */
+            transform: scale(1.03); /* Aumenta levemente o tamanho do botão */
+        }
+        .input-pair {
+            display: flex;
+            flex-direction: row-reverse;     /* Organiza os elementos em linha */
+            align-items: center;     /* Centraliza verticalmente */
+            margin: 5px 0;           /* Espaçamento entre os pares */
+            } 
+        .calculadora {   
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna */
+        align-items: center;    /* Centraliza os elementos horizontalmente dentro do container */
+        background-color: #d3202052; /* Cor de fundo do container */
+        padding: 200px;           /* Espaçamento interno do container */
+        border-radius: 100px;     /* Borda arredondada */
+        box-shadow: 0 0 1990px rgba(225, 233, 113, 0.774); /* Sombra */ 
+            }
+        body{
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;    /* Centraliza verticalmente */
+            height: 100vh;          /* Define a altura do body como 100% da viewport */
+            margin: 0;              /* Remove a margem padrão do body */
+            font: normal 18pt italic;  
+        }
+        input{
+            font: normal 18pt italic;
+            width: 120px;  /*Largura*/
+            
+        }
+        strong{
+            color: rgb(78, 40, 184);
+        }
+        h3{
+            color:rgba(238, 3, 3, 0.774)
+        }
+         div#res{
+            margin-top: 20px;  /* para saltar linha na margem */
+                } 
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+    <h1>Calculadora</h1> <!--h1 e título--> <!--input tem varia caixas de diálogo-->
+    <div class="input-pair">
+        <input type="number" name="txtn1" id="txtn1"> + 
+        <input type="number" name="txtn2" id="txtn2">  
+        <input type="button" value="Somar" onclick="somar()">
+        </div>
+        <div class="input-pair">
+        <input type="number" name="txtn3" id="txtn3"> *
+        <input type="number" name="txtn4" id="txtn4"> 
+        <input type="button" value="Multiplicar" onclick="multiplicar()">
+        </div>
+        <div class="input-pair">
+        <input type="number" name="txtn5" id="txtn5"> /  
+        <input type="number" name="txtn6" id="txtn6"> 
+        <input type="button" value="Divisão" onclick="divisão()">
+        </div>
+        <div class="input-pair">
+        <input type="number" name="txtn7" id="txtn7"> -  
+        <input type="number" name="txtn8" id="txtn8"> 
+        <input type="button" value="Subtração" onclick="Subtração()">
+        </div>
+        <div class="input-pair">
+            <input type="number" name="txtn9" id="txtn9"> %  
+            <input type="number" name="txtn10" id="txtn10"> 
+            <input type="button" value="Resto" onclick="Resto()">
+            </div>
+            <div class="input-pair">
+                <input type="number" name="txtn11" id="txtn11"> ** 
+                <input type="number" name="txtn12" id="txtn12"> 
+                <input type="button" value="Elevado" onclick="Elevado()">
+                </div>
+                <div class="input-pair">
+                    <input type="number" name="txtn13" id="txtn13"> 
+                <input type="button" value="Raiz" onclick="Raiz()">
+                </div>
+        <div id="res">Resultado</div>
+        </div>
+        <script>
+            window.alert('Bem vindo!')
+            function Raiz(){
+                var tn13 = window.document.getElementById('txtn13')
+                var ress = window.document.getElementById('res')
+                var n2 = Number(tn13.value)
+                if(n2 < 0){
+                    ress.innerHTML = `<h3>Não é possível calcular a raiz quadrada de um número negativo.<h3>`
+                } else {
+                var s = Math.sqrt(n2)
+                ress.innerHTML = `A Raiz Quadrada de ${n2}é: <strong>${s}<strong>`
+            }
+            }
+            function Elevado(){
+                var tn11 = window.document.getElementById('txtn11')
+                var tn12 = window.document.getElementById('txtn12')
+                var ress = window.document.getElementById('res')
+                var n1 = Number(tn11.value)
+                var n2 = Number(tn12.value)
+                var s = n2 ** n1 
+                ress.innerHTML = `O Resto Da Divisão entre ${n2} e ${n1} é: <strong>${s}<strong>`
+            }
+            function Resto(){
+                var tn9 = window.document.getElementById('txtn9')
+                var tn10 = window.document.getElementById('txtn10')
+                var ress = window.document.getElementById('res')
+                var n1 = Number(tn9.value)
+                var n2 = Number(tn10.value)
+                var s = n2 % n1 
+                ress.innerHTML = `O Resto Da Divisão entre ${n2} e ${n1} é: <strong>${s}<strong>`
+            }
+            function Subtração(){
+                var tn7 = window.document.getElementById('txtn7')
+                var tn8 = window.document.getElementById('txtn8')
+                var ress = window.document.getElementById('res')
+                var n1 = Number(tn7.value)
+                var n2 = Number(tn8.value)
+                var s = n2 - n1 
+                ress.innerHTML = `A Subtração entre ${n2} e ${n1} é: <strong>${s}<strong>`
+            }
+            function divisão(){
+                var tn5 = window.document.getElementById('txtn5')
+                var tn6 = window.document.getElementById('txtn6')
+                var ress = window.document.getElementById('res')
+                var n1 = Number(tn5.value)
+                var n2 = Number(tn6.value)
+                var s = n2 / n1 
+                if(n1 == 0){
+                    ress.innerHTML = '<h3>Erro: Divisão por zero não é permitida.<h3>'
+                } else {
+                ress.innerHTML = `A Divisão entre ${n2} e ${n1} é: <strong>${s}<strong>`
+            }
+            }
+            function multiplicar(){
+                var tn3 = window.document.getElementById('txtn3')
+                var tn4 = window.document.getElementById('txtn4')
+                var ress = window.document.getElementById('res')
+                var n1 = Number(tn3.value)
+                var n2 = Number(tn4.value)
+                if(n1 == '' && n2 == ''){
+                    window.alert('Informe o n1 e n2')
+                } 
+                if(n1 == '' && n2 != ''){
+                    window.alert('Informe o n2')
+                    } 
+                if(n1 != '' && n2 == ''){
+                    window.alert('Informe o n1')
+                } 
+                if(n1 != '' && n2 != '') {
+                var s = n2 * n1 
+                ress.innerHTML = `A Multiplicação entre ${n2} e ${n1} é: <strong>${s}<strong>` 
+                }
+            
+            }
+            function somar(){
+                var tn1 = window.document.getElementById('txtn1')
+                var tn2 = window.document.getElementById('txtn2')
+                var ress = window.document.getElementById('res')
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                if(/^[1-9]+$/.test(n1)){
+                    if(/^[1-9]+$/.test(n2)){
+                        var s = n2 + n1
+                        ress.innerHTML = `A soma entre ${n2} e ${n1} é: <strong>${s}<strong>`
+                   } else {
+                    window.alert('Informe valores válidos!')
+                   }
+                } else {
+                    window.alert('Informe valores válidos!')
+                }
+            
+            }
+           
+        </script>
+</body>
+</html>

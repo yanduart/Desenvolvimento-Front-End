@@ -1,0 +1,52 @@
+body{
+       
+       font: normal 15pt arial;
+       transition: background-color 0.5s ease; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+header{
+     color:rgba(153, 47, 47, 0.925);
+     text-align: center; /* centraliza o text */
+}
+
+section{
+       background: white;
+       border-radius: 10px; /* Muda a borda */
+       padding: 15px; /* Centraliza o text dentro e aumenta a altura */
+       width: 500px; /* Largura */
+       margin: auto; /* Centralizar */
+       box-shadow: 5px 5px 10px black; /* Sombra */
+}
+
+footer{
+    color:rgb(197, 49, 49);
+    text-align: center; /* centraliza o text */
+    font-style: italic;
+    
+}
+
+.imagem {
+       width: 280px;
+       height: 280px;
+       border: 2px solid #eb5d0b18;
+       border-radius: 50%;
+       object-fit: cover;
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.397);
+       
+
+} div{
+       padding: 8px;
+} 
+a {
+       color: black;
+}
+p {
+       color: rgb(0, 0, 0);
+}
+   div#res{
+       text-align: center;
+   }
+  

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3</title>
+    <style>
+          body{
+            background-color: hsla(0, 59%, 41%, 0.185);
+            font: normal 12pt italic;
+          }
+          input{
+              height: 50px;
+          }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com dados v1.0</h1>
+    <input type="button" value="Clique para começar" onclick="verificar()">
+    <script>
+      function verificar(){
+        
+          var nome = window.prompt('Informe seu nome!')
+          if(nome != null && nome != ''){
+          window.alert(`Olá, e um Prazer em te conhecer ${nome}! `)
+        }else{
+           window.alert('[ERROR!] insira o nome novamente!!')
+        }
+      }
+    </script>
+</body>
+</html>

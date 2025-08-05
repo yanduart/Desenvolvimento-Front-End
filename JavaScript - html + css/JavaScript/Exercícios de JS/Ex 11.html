@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        input[type="button"]{
+            padding: 13px;
+            font-size: 17pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+    <input type="button" value="Clique em mim" onclick="chek()">
+    <input type="button" value="Zerar contador" onclick="chek1()">
+    <div id="ress">
+      
+    </div>
+    <script>
+
+        var i = 0
+       
+        let nome = window.prompt('Informe seu nome!')
+        
+        function chek3(){
+        let nome = window.prompt('"Nome inválido" Atualize a pagina e tente novamente!')
+         
+        }
+        if(/^[a-zA-Z\s]+$/.test(nome) && nome != null){
+       
+        
+        window.alert(`Bem vindo! ${nome}`)
+
+
+        function chek(){
+          ress = window.document.getElementById('ress')
+          
+          i++
+          ress.innerHTML = `<br>O Contatador está com <mark><ins><strong>${i}</strong></ins></mark> cliques!`
+        }
+
+        function chek1(){
+            i = 0
+            ress.innerHTML = null
+        }
+        
+    } else {
+        chek3()
+    }
+    
+
+    </script>
+</body>
+</html>

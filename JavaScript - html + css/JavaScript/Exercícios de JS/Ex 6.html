@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando dois números</title>
+    <style>
+        input{
+            font-size: 12pt;
+            padding: 14px;
+        }
+        a#col{
+            background-color: rgba(165, 167, 60, 0.507);
+        }
+        a#co{
+            background-color: chartreuse;
+        }
+        body{
+            font: normal 16pt italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando dois Números</h1>
+    <input type="button" value="Clique para somar" onclick="somar()">
+    <div id="ress">
+      <br>  A soma vem aqui...
+    </div>
+    <script>
+      function somar(){
+         let ress = window.document.getElementById('ress')
+         let n1 = window.prompt('Informe o primeiro número!')
+         let n2 = window.prompt('Informe o segundo número!')
+         let tot = Number(n1) + Number(n2)
+         if(n1 == null || n1 == '' || n2 == '' || n2 == null){
+            window.alert('[ERROR!] Informe valores válidos!')
+         } else if (isNaN(n1) || isNaN(n2)){
+            window.alert('[ERROR!] Informe valores válidos!')
+         }
+          else {
+         ress.innerHTML = `<br>A soma de <a id="col">${n1}</a> e <a id="col">${n2}</a> é: <a id="co"><strong>${tot}</strong></a>!`
+          }
+      }   
+    </script>
+</body>
+</html>

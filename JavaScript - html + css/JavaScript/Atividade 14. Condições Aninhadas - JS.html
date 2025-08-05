@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição Aninhadas</title>
+    <style>
+      input[type='button']:hover{
+         background-color: rgba(52, 69, 226, 0.603); /* Altera a cor de fundo ao passar o mouse */
+            transform: scale(1.13); /* Aumenta levemente o tamanho do botão */
+            background-color: rgba(47, 48, 126, 0.295); /* Cor de fundo */
+            border: 2px solid #7e2f2f; /* Borda */
+            cursor: pointer; /* Muda o cursor para mão */
+            transition: background-color 1.0s, transform 0.3s; /* Transição suave */
+      }
+    </style>
+</head>
+<body>
+    <h1>"Voto no brasil"</h1>
+    <h2>Informe sua Idade!</h2>
+    <input type="number" name="Voto" id="Voto">
+    <input type="button" value="Verificar" onclick="Verificar()">
+    <div>
+       <input type="text" name="Resultado" id="Resultado" readonly>
+    </div>
+    <script>
+        function Verificar(){
+             var Voto = window.document.getElementById('Voto')
+             var Voto = Number(Voto.value)
+             var Resultado =  window.document.getElementById('Resultado')
+             if(Voto < 16){
+           Resultado.value = 'Não Vota!'
+        } else if (Voto >= 16 && Voto < 18 || Voto > 65){
+           Resultado.value = 'Voto Opcional'
+        } else {
+           Resultado.value = 'Voto Obrigatório!'
+        }
+        }
+
+    </script>
+</body>
+</html>
+  
